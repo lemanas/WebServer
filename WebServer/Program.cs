@@ -48,8 +48,8 @@ namespace WebServer
 
             Console.WriteLine("User connected!");
 
-            string htmlString = "<h1>Index</h1>";
-            byte[] htmlBytes = Encoding.Unicode.GetBytes(htmlString);
+            string htmlString = "<div>Index</div>";
+            byte[] htmlBytes = Encoding.ASCII.GetBytes(htmlString);
             client.BeginSend(htmlBytes, 0, htmlBytes.Length, SocketFlags.None, SendCallback, client);
         }
 
